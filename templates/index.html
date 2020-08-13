@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description" content="Responsive Admin Template" />
+        <meta name="author" content="SmartUniversity" />
+        <title>Smart</title>
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+        <!-- icons -->
+        <link href="fonts/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="fonts/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="fonts/material-design-icons/material-icon.css' %}" rel="stylesheet" type="text/css" />
+        <!--bootstrap -->
+        <link href="{% static '/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- Material Design Lite CSS -->
+        <link rel="stylesheet" href="{% static '/plugins/material/material.min.css' %}">
+        <link rel="stylesheet" href="{% static '/css/material_style.css' %}">
+        <!-- Theme Styles -->
+        <link href="{% static '/css/theme/light/theme_style.css' %}" rel="stylesheet" id="rt_style_components" type="text/css" />
+        <link href="{% static '/css/theme/light/style.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static '/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static '/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static '/css/theme/light/theme-color.css' %}" rel="stylesheet" type="text/css" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}" />
+        <!-- external style -->
+        <link href="{% static '/css/style.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static '/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.theme.css' %}">
+    <!-- <link rel="stylesheet" href="{% static '/css/style.css"> -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static '/css/box-shadow.css' %}">
+    </head>
+<!-- END HEAD -->
+
+    <body>
+        <div class="img-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <head>
+                            <div class="logo-head">
+                                    <a class="navbar-brand" href="#"><span
+                                        class="logo-wraper logo-white"> <img src="images/Logo.png"
+                                            alt="">
+                                    </span></a>
+                            </div>
+                            <hr>
+                        </head>
+
+                        <div class="body-content">
+                            <span class="home-head"> Smart Activity</span>
+                            
+                            <h4>Click on the Blue button if you are a Lecturer or Click on the White button if you are student</h4>
+                            <div class="cta-btn-group">
+                                <a class="btn blue-btn border-none btn-rounded-corner" href="{% url 'accounts:sign_up' %}"
+                                    target="_blank">Lecturer <span class="icon-on-button"><i
+                                        class="fa fa-graduation-cap"></i></span></a>
+                                <a class="btn white-btn border-none btn-rounded-corner" href="{% url 'student_signup' %}" target="_blank">Student<span class="icon-on-button"><i class="fa fa-arrow-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

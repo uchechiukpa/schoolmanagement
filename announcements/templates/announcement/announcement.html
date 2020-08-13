@@ -1,0 +1,11 @@
+<h1>listen to the announcements</h1>
+{% block content %}
+{% for announce in announces %}
+ 
+   <h3>{{announce.annoucement_title}} </h3>
+   <h4>{{announce.annoucement_description}}</h4>
+   
+    
+{% endfor   %}
+
+{% endblock content %}
