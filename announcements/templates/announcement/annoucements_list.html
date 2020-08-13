@@ -8,16 +8,16 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Assignment List</div>
+                    <div class="page-title">Announcements List</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li>
                         <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a class="parent-item" href="#">Assignments</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        <a class="parent-item" href="#">Announcements</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Assignment List</li>
+                    <li class="active">Announcements List</li>
                 </ol>
             </div>
         </div>
@@ -25,7 +25,7 @@
             <div class="col-sm-12 col-md-12 col-xl-12">
                 <div class="card-box">
                     <div class="card-head">
-                        <header>Assignment List</header>
+                        <header>Announcements List</header>
                         <button id="sdntmenu" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
@@ -55,8 +55,8 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Assigment Name</th>
-                                        <th>Course ID</th>
+                                        <th>Announcements Title</th>
+                                        <th>Announcements Description</th>
                                         <!-- <th>Phone</th>
                                         <th>Email</th>
                                         <th>Starting Year</th>
@@ -65,11 +65,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for assigmnent in assigments %}
+                                    {% for announce in announces %}
                                     <tr class="odd">
-                                        <td>{{ assigmnent.id }}</td>
-                                        <td> {{assigmnent.questions}}</td>
-                                        <!-- <td>{{dept.dept_head}}</td> -->
+                                        <td>{{ announce.id }}</td>
+                                        <td> {{announce.annoucement_title}}</td>
+                                        <td>{{announce.annoucement_description}}</td>
                                         <!-- <td>{{ dept.phone }}</td>
                                         <td>{{ dept.email }}</td>
                                         <td>{{ dept.start_date }}</td>

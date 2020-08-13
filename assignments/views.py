@@ -5,10 +5,13 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # from django.core.urlresolvers import reverse_lazy
 from .models import Assigment
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from courses.models import Course
 
 def Assigment_list(request):
     assigments = Assigment.objects.all().order_by('id')
+
+    # courses = Course.objects.all().order_by('id')
+
     return render(request, 'assigments/assigment_list.html', {'assigments': assigments})
 
 

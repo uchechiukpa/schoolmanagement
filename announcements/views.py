@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 def annoucements_list(request):
     announces = Annoucement.objects.all().order_by('id')
-    return render(request,'announcement/announcement.html', {'announces': announces})
+    return render(request,'announcement/annoucements_list.html', {'announces': announces})
 
 # class AnnoucementCreateView(LoginRequiredMixin, CreateView):
 #     model = Annoucement
