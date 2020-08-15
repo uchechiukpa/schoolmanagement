@@ -75,7 +75,8 @@
                                         <td>{{ dept.start_date }}</td>
                                         <td>{{ dept.dept_capacity }}</td> -->
                                         <td>
-
+                                            <a href="{% url 'lectures:update_lecture' lecture.id %}" class="" data-toggle="tooltip" title="Edit">
+                                                <i class="fa fa-check"></i></a>
                                         </td>
                                     </tr>
 

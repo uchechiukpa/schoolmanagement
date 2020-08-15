@@ -292,7 +292,7 @@
 										</li> -->
 									</ul>
 								</li>
-								<li class="nav-item start active">
+								<li class="nav-item start ">
 									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
 										<span class="title">Classes</span> <span class="arrow"></span>
 									</a>
@@ -311,7 +311,7 @@
 										</li> -->
 									</ul>
 								</li>
-								<li class="nav-item start active">
+								<li class="nav-item start">
 									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
 										<span class="title">Assigment</span> <span class="arrow"></span>
 									</a>
@@ -330,7 +330,7 @@
 										</li> -->
 									</ul>
 								</li>
-								<li class="nav-item start active">
+								<li class="nav-item start">
 									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
 										<span class="title">Announcement</span> <span class="arrow"></span>
 									</a>
@@ -349,7 +349,7 @@
 																		</li> -->
 									</ul>
 								</li>
-								<li class="nav-item start active">
+								<li class="nav-item start">
 									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
 										<span class="title">Lecture</span> <span class="arrow"></span>
 									</a>
@@ -368,7 +368,7 @@
 											</li> -->
 									</ul>
 								</li>
-								<li class="nav-item start active">
+								<li class="nav-item start">
 									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
 										<span class="title">Submission</span> <span class="arrow"></span>
 									</a>
@@ -402,22 +402,19 @@
 								
 								<li class="nav-item">
 									<a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-										<span class="title">Students</span><span class="arrow"></span></a>
+										<span class="title">Students</span> <span class="arrow"></span></a>
 									<ul class="sub-menu">
 										<li class="nav-item">
 											<a href="{% url 'students:students_list' %}" class="nav-link "> <span class="title">All Students</span>
 											</a>
 										</li>
-										<!-- <li class="nav-item">
-											<a href="add_student_bootstrap.html" class="nav-link "> <span class="title">Add new Student</span>
+										<li class="nav-item">
+											<a href="{% url 'students:add_student' %}" class="nav-link "> <span class="title">Add new Student</span>
 											</a>
 										</li> -->
-										<!-- <li class="nav-item">
-											<a href="edit_student.html" class="nav-link "> <span class="title">Edit Student</span>
-											</a>
-										</li> -->
+										
 									</ul>
-								</li>
+								</li> 
 								<li class="nav-item">
 									<a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
 										<span class="title">Teachers</span><span class="arrow"></span></a>
@@ -427,13 +424,10 @@
 											</a>
 										</li>
 										<li class="nav-item">
-											<a href="add_student_bootstrap.html" class="nav-link "> <span class="title">Add new Teachers</span>
+											<a href="{% url 'teachers:add_teacher' %}" class="nav-link "> <span class="title">Add new Teachers</span>
 											</a>
 										</li>
-											<!-- <li class="nav-item">
-											<a href="edit_student.html" class="nav-link "> <span class="title">Edit Student</span>
-											</a>
-											</li> -->
+										
 									</ul>
 								</li>
 								<li class="nav-item">

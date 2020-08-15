@@ -12,17 +12,17 @@ def Assigment_list(request):
 
     # courses = Course.objects.all().order_by('id')
 
-    return render(request, 'assigments/assigment_list.html', {'assigments': assigments})
+    return render(request, 'assignments/assigment_list.html', {'assigments': assigments})
 
 
-# class AssignmentCreateView(LoginRequiredMixin, CreateView):
-#     model = Assignment
-#     fields = ['annoucements_title', 'Annoucements_description']  
+class AssignmentCreateView(CreateView):
+    model = Assigment
+    fields = ['questions']  
 
-# class AssignmentUpdateView(LoginRequiredMixin, UpdateView):
-#     model = Assignment
-#     fields = ['annoucements_title', 'Annoucements_description']    
+class AssignmentUpdateView(UpdateView):
+    model = Assigment
+    fields = ['questions']    
 
-# class AssignmentDeleteView(LoginRequiredMixin, DeleteView):
-#     model = Assignment
-#     # success_url = reverse_lazy('departments:dept_list')
+class AssignmentDeleteView(DeleteView):
+    model = Assigment
+    # success_url = reverse_lazy('departments:dept_list')

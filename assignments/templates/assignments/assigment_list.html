@@ -45,7 +45,9 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-6">
                                 <div class="btn-group">
-
+                                <a href="{% url 'assignments:add_assigment' %}" id="addRow" class="btn btn-info">
+                                    Add New <i class="fa fa-plus"></i>
+                                </a>
                                 </div>
                             </div>
                         </div>
@@ -69,14 +71,16 @@
                                     <tr class="odd">
                                         <td>{{ assigmnent.id }}</td>
                                         <td> {{assigmnent.questions}}</td>
-                                        <!-- <td>{{dept.dept_head}}</td> -->
+                                        <td>{{dept.dept_head}}</td>
                                         <!-- <td>{{ dept.phone }}</td>
                                         <td>{{ dept.email }}</td>
                                         <td>{{ dept.start_date }}</td>
                                         <td>{{ dept.dept_capacity }}</td> -->
                                         <td>
-
+                                        <a href="{% url 'assignments:update_assigment' assigmnent.id %}" class="" data-toggle="tooltip" title="Edit">
+                                            <i class="fa fa-check"></i></a>
                                         </td>
+                                        
                                     </tr>
 
                                     {% endfor %}

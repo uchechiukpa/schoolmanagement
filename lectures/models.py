@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from teachers.models import Teacher
 from courses.models import Course
 # Create your models here.
@@ -11,3 +12,6 @@ class Lecture(models.Model):
 
     def __str__(self):
         return self.lecture_title
+
+def get_absolute_url(self):
+        return reverse('lectures:lecture_list')

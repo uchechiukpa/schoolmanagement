@@ -71,12 +71,13 @@
                                         <td>{{ submission.id }}</td>
                                         <td> {{submission.date_submitted}}</td>
                                         <td>{{submission.lecture_note}}</td>
-                                        <!-- <td>{{ dept.phone }}</td>
-                                        <td>{{ dept.email }}</td>
+                                         <td>{{ dept.phone }}</td>
+                                        <!--<td>{{ dept.email }}</td>
                                         <td>{{ dept.start_date }}</td>
                                         <td>{{ dept.dept_capacity }}</td> -->
                                         <td>
-
+                                            <a href="{% url 'submissions:update_submission' submission.id %}" class="" data-toggle="tooltip" title="Edit">
+                                                <i class="fa fa-check"></i></a>
                                         </td>
                                     </tr>
 

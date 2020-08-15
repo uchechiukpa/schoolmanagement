@@ -9,3 +9,6 @@ class Student(models.Model):
 
     def __str__(self):
         return self.firstname + ' ' + self.lastname
+
+    def get_absolute_url(self):
+        return reverse('students:students_list')

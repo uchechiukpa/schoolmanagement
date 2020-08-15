@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Course
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 
 # Create your views here.
 def Course_list(request):
@@ -10,3 +11,10 @@ def Course_list(request):
 class CourseCreate(CreateView):
     model = Course
     fields = ['course_title', 'course_code']
+
+class CourseUpdateView(UpdateView):
+    model = Course
+    fields = ['course_title', 'course_code']
+
+class CourseDeleteView(DeleteView):
+    model = Course

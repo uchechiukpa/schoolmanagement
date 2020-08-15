@@ -9,4 +9,4 @@ class Annoucement(models.Model):
         return self.annoucements_title 
 
     def get_absolute_url(self):
-        return reverse('announcements:annoucements_list')
+         return reverse('announcements:annoucements_list')
