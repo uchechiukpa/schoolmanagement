@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Course
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse
 
 
 # Create your views here.
@@ -18,3 +19,4 @@ class CourseUpdateView(UpdateView):
 
 class CourseDeleteView(DeleteView):
     model = Course
+    success_url = reverse('courses:course_list')

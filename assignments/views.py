@@ -25,4 +25,4 @@ class AssignmentUpdateView(UpdateView):
 
 class AssignmentDeleteView(DeleteView):
     model = Assigment
-    # success_url = reverse_lazy('departments:dept_list')
+    success_url = reverse_lazy('departments:dept_list')
