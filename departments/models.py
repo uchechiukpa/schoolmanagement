@@ -1,5 +1,6 @@
 from django.db import models
 from teachers.models import Teacher
+from django.urls import reverse
 
 # Create your models here.
 class Department(models.Model):
@@ -10,3 +11,7 @@ class Department(models.Model):
 
     def __str__(self):
         return self.dept_name
+
+    def get_absolute_url(self):
+        return reverse('departments:dept_list')
+

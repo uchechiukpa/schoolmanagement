@@ -8,16 +8,16 @@
         <div class="page-bar">
             <div class="page-title-breadcrumb">
                 <div class=" pull-left">
-                    <div class="page-title">Department List</div>
+                    <div class="page-title">Announcements List</div>
                 </div>
                 <ol class="breadcrumb page-breadcrumb pull-right">
                     <li>
                         <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a class="parent-item" href="#">Department</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        <a class="parent-item" href="#">Announcements</a>&nbsp;<i class="fa fa-angle-right"></i>
                     </li>
-                    <li class="active">Department List</li>
+                    <li class="active">Announcements List</li>
                 </ol>
             </div>
         </div>
@@ -25,7 +25,7 @@
             <div class="col-sm-12 col-md-12 col-xl-12">
                 <div class="card-box">
                     <div class="card-head">
-                        <header>Department List</header>
+                        <header>Announcements List</header>
                         <button id="sdntmenu" class="mdl-button mdl-js-button mdl-button--icon pull-right"
                             data-upgraded=",MaterialButton">
                             <i class="material-icons">more_vert</i>
@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-6">
                                 <div class="btn-group">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -55,8 +55,8 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Dept. Name</th>
-                                        <th>Head OF Dept.</th>
+                                        <th>Announcements Title</th>
+                                        <th>Announcements Description</th>
                                         <!-- <th>Phone</th>
                                         <th>Email</th>
                                         <th>Starting Year</th>
@@ -65,17 +65,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for dept in depts %}
+                                    {% for announce in announces %}
                                     <tr class="odd">
-                                        <td>{{ dept.ID }}</td>
-                                        <td> {{dept.dept_head}}</td>
-                                        <td>{{dept.dept_head}}</td>
+                                        <td>{{ announce.id }}</td>
+                                        <td> {{announce.annoucement_title}}</td>
+                                        <td>{{announce.annoucement_description}}</td>
                                         <!-- <td>{{ dept.phone }}</td>
                                         <td>{{ dept.email }}</td>
                                         <td>{{ dept.start_date }}</td>
                                         <td>{{ dept.dept_capacity }}</td> -->
                                         <td>
-                                            
+                                        <a href="{% url 'announcements:update_annoucement' announce.id %}" class="" data-toggle="tooltip" title="Edit">
+                                              <i class="fa fa-check"></i></a>
                                         </td>
                                     </tr>
 
