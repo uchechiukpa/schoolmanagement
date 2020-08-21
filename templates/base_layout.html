@@ -248,7 +248,7 @@
 						<div id="remove-scroll" class="left-sidemenu">
 							<ul class="sidemenu  page-header-fixed slimscroll-style" data-keep-expanded="false" data-auto-scroll="true"
 								data-slide-speed="200" style="padding-top: 20px">
-								<li class="sidebar-toggler-wrapper hide">
+								<li class="sidebar-toggler-wr apper hide">
 									<div class="sidebar-toggler">
 										<span></span>
 									</div>
@@ -273,163 +273,33 @@
 									</a>
 								</li>
 								
-								<li class="nav-item start active">
-									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
-										<span class="title">Courses</span> <span class="arrow"></span>
+								
+								<li class="nav-item">
+									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">business</i>
+										<span class="title">Teachers</span> <span class="arrow"></span>
 									</a>
 									<ul class="sub-menu">
 										<li class="nav-item">
-											<a href="{% url 'courses:course_list' %}" class="nav-link "> <span class="title">All Courses</span>
-											</a>
-										</li>
-									
-										<li class="nav-item">
-										
-										</li>
-										<!-- <li class="nav-item">
-											<a href="#" class="nav-link "> <span class="title">Edit Course</span>
-											</a>
-										</li> -->
-									</ul>
-								</li>
-								<li class="nav-item start ">
-									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
-										<span class="title">Classes</span> <span class="arrow"></span>
-									</a>
-									<ul class="sub-menu">
-										<li class="nav-item">
-											<a href="{% url 'classes:class_list' %}" class="nav-link "> <span class="title">All Classes</span>
+											<a href="{% url 'add_teacher' %}" class="nav-link "> <span class="title">Add Teachers</span>
 											</a>
 										</li>
 
-										<li class="nav-item">
-
-										</li>
-										<!-- <li class="nav-item">
-											<a href="#" class="nav-link "> <span class="title">Edit Course</span>
-											</a>
-										</li> -->
-									</ul>
-								</li>
-								<li class="nav-item start">
-									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
-										<span class="title">Assigment</span> <span class="arrow"></span>
-									</a>
-									<ul class="sub-menu">
-										<li class="nav-item">
-											<a href="{% url 'assignments:assigment_list' %}" class="nav-link "> <span class="title">All Assigments</span>
-											</a>
-										</li>
-								
-										<li class="nav-item">
-								
-										</li>
-										<!-- <li class="nav-item">
-											<a href="#" class="nav-link "> <span class="title">Edit Course</span>
-											</a>
-										</li> -->
-									</ul>
-								</li>
-								<li class="nav-item start">
-									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
-										<span class="title">Announcement</span> <span class="arrow"></span>
-									</a>
-									<ul class="sub-menu">
-										<li class="nav-item">
-											<a href="{% url 'announcements:annoucements_list' %}" class="nav-link "> <span class="title">All Announcement</span>
-											</a>
-										</li>
-								
-										<li class="nav-item">
-								
-										</li>
-										<!-- <li class="nav-item">
-																			<a href="#" class="nav-link "> <span class="title">Edit Course</span>
-																			</a>
-																		</li> -->
-									</ul>
-								</li>
-								<li class="nav-item start">
-									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
-										<span class="title">Lecture</span> <span class="arrow"></span>
-									</a>
-									<ul class="sub-menu">
-										<li class="nav-item">
-											<a href="{% url 'lectures:lecture_list' %}" class="nav-link "> <span class="title">All Lectures</span>
-											</a>
-										</li>
-								
-										<li class="nav-item">
-								
-										</li>
-										<!-- <li class="nav-item">
-												<a href="#" class="nav-link "> <span class="title">Edit Course</span>
-												</a>
-											</li> -->
-									</ul>
-								</li>
-								<li class="nav-item start">
-									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
-										<span class="title">Submission</span> <span class="arrow"></span>
-									</a>
-									<ul class="sub-menu">
-										<li class="nav-item">
-											<a href="{% url 'submissions:submission_list' %}" class="nav-link "> <span class="title">All Submission</span>
-											</a>
-										</li>
-								
-										<li class="nav-item">
-								
-										</li>
-										<!-- <li class="nav-item">
-																				<a href="#" class="nav-link "> <span class="title">Edit Course</span>
-																				</a>
-																			</li> -->
 									</ul>
 								</li>
 								<li class="nav-item">
 									<a href="#" class="nav-link nav-toggle"> <i class="material-icons">business</i>
-										<span class="title">Departments</span> <span class="arrow"></span>
+										<span class="title">Student</span> <span class="arrow"></span>
 									</a>
 									<ul class="sub-menu">
 										<li class="nav-item">
-											<a href="{% url 'departments:dept_list' %}" class="nav-link "> <span class="title">All Departments</span>
+											<a href="{% url 'add_student' %}" class="nav-link "> <span class="title">Add Student</span>
 											</a>
 										</li>
-
-									</ul>
-								</li>
 								
-								<li class="nav-item">
-									<a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-										<span class="title">Students</span> <span class="arrow"></span></a>
-									<ul class="sub-menu">
-										<li class="nav-item">
-											<a href="{% url 'students:students_list' %}" class="nav-link "> <span class="title">All Students</span>
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="{% url 'students:add_student' %}" class="nav-link "> <span class="title">Add new Student</span>
-											</a>
-										</li> -->
-										
-									</ul>
-								</li> 
-								<li class="nav-item">
-									<a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-										<span class="title">Teachers</span><span class="arrow"></span></a>
-									<ul class="sub-menu">
-										<li class="nav-item">
-											<a href="{% url 'teachers:teachers_list' %}" class="nav-link "> <span class="title">All Teachers</span>
-											</a>
-										</li>
-										<li class="nav-item">
-											<a href="{% url 'teachers:add_teacher' %}" class="nav-link "> <span class="title">Add new Teachers</span>
-											</a>
-										</li>
-										
 									</ul>
 								</li>
+						
+						
 								<li class="nav-item">
 								<span class="title">Event Management</span>
 									</a>

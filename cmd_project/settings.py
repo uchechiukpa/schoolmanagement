@@ -8,16 +8,9 @@ SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
-    'students',
-    'teachers',
-    'announcements',
-    'assignments',
+    'student_management_app',
+    'subjects',
     'classes',
-    'courses',
-    'departments',
-    'lectures',
-    'reports',
-    'submissions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -62,10 +55,12 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+AUTH_USER_MODEL="student_management_app.CustomUser"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+AUTHENTICATION_BACKENDS=['student_management_app.EmailBackEnd.EmailBackEnd']
 
 DATABASES = {
     "default": {

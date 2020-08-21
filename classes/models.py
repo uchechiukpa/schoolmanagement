@@ -1,32 +1,25 @@
 from django.db import models
-from teachers.models import Teacher
-from django.urls import reverse
 
 # Create your models here.
-
-class Classes(models.Model):
-    FIRSTYEAR = '100L'
-    SECONDYEAR = '200L'
-    THRIDYEAR= '300L'
-    FOURTHYEAR = '400L'
-    FIFTHYEAR = '500L'
-    YEAR_IN_SCHOOL = [
-        (FIRSTYEAR, '100L'),
-        (SECONDYEAR , '200L'),
-        (THRIDYEAR, '300L'),
-        (FOURTHYEAR, '400L'),
-        (FIFTHYEAR, '500L'),
+class Class(models.Model):
+    PRIMARYONE = 'PR 1'
+    PRIMARYTWO = 'PR 2'
+    PRIMARYTHREE = 'PR 3'
+    PRIMARYFOUR = 'PR 4'
+    PRIMARYFIVE = 'PR 5'
+    PRIMARYSIX = 'PR 6'
+    YEAR_IN_SCHOOL_CHOICES = [
+        (PRIMARYONE, 'PRIMARY 1'),
+        (PRIMARYTWO, 'PRIMARY 2'),
+        (PRIMARYTHREE, 'PRIMARY 3'),
+        (PRIMARYFOUR, 'PRIMARY 4'),
+        (PRIMARYFIVE, 'PRIMARY 5'),
+        (PRIMARYSIX, 'PRIMARY 6'),
     ]
-    class_name = models.CharField(max_length=45, choices=YEAR_IN_SCHOOL, default=FIRSTYEAR)
-    teacher_id = models.ManyToManyField(Teacher)
+    student_class = models.CharField(max_length=10, choices=YEAR_IN_SCHOOL_CHOICES, default=PRIMARYONE)
 
     class Meta:
-        verbose_name_plural = 'classes'
+        verbose_name_plural='classes'
 
     def __str__(self):
-        return self.class_name
-
-        
-    def get_absolute_url(self):
-        return reverse('classes:class_list')
-    
+        return self.student_class 

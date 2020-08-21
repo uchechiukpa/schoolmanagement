@@ -8,16 +8,18 @@ from .views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('announcement/', include('announcements.urls')),
-    path('department/', include('departments.urls')),
-    path('course/', include('courses.urls')),
-    path('assigment/', include('assignments.urls')),
-    path('class/', include('classes.urls')),
-    path('lecture/', include('lectures.urls')),
-    path('report/', include('reports.urls')),
-    path('submission/', include('submissions.urls')),
-    path('teacher/', include('teachers.urls')),
-    path('student/', include('students.urls')),
+    # path('announcement/', include('announcements.urls')),
+    # path('department/', include('departments.urls')),
+    # path('course/', include('courses.urls')),
+    # path('assigment/', include('assignments.urls')),
+    # path('class/', include('classes.urls')),
+    # path('lecture/', include('lectures.urls')),
+    # path('report/', include('reports.urls')),
+    # path('submission/', include('submissions.urls')),
+    # path('teacher/', include('teachers.urls')),
+    # path('student/', include('students.urls')),
+    path('', include('student_management_app.urls'))
+
 ]
 
 
