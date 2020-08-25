@@ -62,39 +62,37 @@
 
                                     </tr>
                                 </thead>
-                                <tbody>
-
-                                   
-                                    
-                                    
-                                    {% for assignment in assignments %}
+                                <tbody>                                    
                                     {% for details in coursedetails %}
                                     
                                     {% if details.course_class == request.user.student.student_id  %}
-                                   
+                                        {% for assignment in assignments %}
                                     <tr class="odd">
+                                        
+                                    {% if assignment.course_id.course_name == details.course_name %}
                                         <td>{{ assignment.id }}</td>
                                         <td> {{details.course_name}}</td>
-                                    {% if details.course_class == details.course_class %}
-                                  
-                                    {% endif %}
-                                    {% if assignment.course_id.course_name == details.course_name %}
                                         <td>{{assignment.question}}</td>
+                                       
                                     {%  endif %}
-                                    {% if not assignment.course_id.course_name == details.course_name %}
                                     
-                                    <td>No assignment</td>
+                                    {% if assignment.course_id.course_name == none %}
+                                        <td>{{ assignment.id }}</td>
+                                        <td> {{details.course_name}}</td>
+                                        <td>No assignment</td>
                                     {% endif %}
+
+                                   
                                         <!-- <td>{{ dept.phone }}</td>
                                         <td>{{ dept.email }}</td>
                                         <td>{{ dept.start_date }}</td>
                                         <td>{{ dept.dept_capacity }}</td> -->
                                         
                                     </tr>
-                                    
+                                    {% endfor %}
                                     {% endif %}
                                    
-                                    {% endfor %}
+                                    
                                     {% endfor %}
                                     
                                    

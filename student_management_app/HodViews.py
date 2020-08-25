@@ -100,12 +100,9 @@ def show_annocements(request):
 def show_assignments(request,slug):
     assignments = Assignment.objects.all()
     courses =  Course.objects.all()
-    # print(Assignment.course)
-    student = Student.objects.get(id=1)
-    studentclass = student.student_id
     coursedetails = Course.objects.filter(course_name=slug)
 
-    
+    print(Assignment.objects.all())
 
     context = {
         'assignments': assignments,
