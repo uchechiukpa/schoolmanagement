@@ -392,3 +392,32 @@ ul.chat-available-user li a:hover {
 .logo-head {
     background-color: #397db9;
 }
+
+/* STUDENT HOME */
+.container-studenthome{
+    margin-left: 8em;
+}
+
+.container-body{
+    background-color: white;
+    width: 85%;
+    height: 80vh;
+    margin-bottom: 3em;
+
+}
+.studenthome-header{
+    margin-left: 5em;
+}
+.annoncement{
+    /* display: flex;
+    justify-content: center; */
+    width: 95%;
+    padding: 3em 0 1em 3em;
+    border-bottom: 1px solid grey;
+}
+.comment{
+    font-size: 1.5em;
+}
+.update-announcment{
+    margin-left: 2em;
+}
