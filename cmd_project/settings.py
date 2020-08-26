@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     'announcements',
     'assignments',
     'submissions',
+    'documents',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -415,6 +415,16 @@ ul.chat-available-user li a:hover {
     padding: 3em 0 1em 3em;
     border-bottom: 1px solid grey;
 }
+
+.card-style{
+    height: 15em;
+    width: 20em;
+}
+.card-center{
+    margin: 0 auto;
+    padding-right: 8em;
+}
+
 .comment{
     font-size: 1.5em;
 }

@@ -52,7 +52,7 @@
                                 id="example4">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>id</th>
                                         <th>Course</th>
                                         <th>Assignments</th>
                                         <!-- <th>Phone</th>
@@ -67,20 +67,37 @@
                                     
                                     {% if details.course_class == request.user.student.student_id  %}
                                         {% for assignment in assignments %}
-                                    <tr class="odd">
                                         
-                                    {% if assignment.course_id.course_name == details.course_name %}
-                                        <td>{{ assignment.id }}</td>
-                                        <td> {{details.course_name}}</td>
-                                        <td>{{assignment.question}}</td>
-                                       
-                                    {%  endif %}
+                                    <tr class="odd">
+                                    {% if details.course_name == assignment.course_id.course_name%}
+                                    <td>{{ assignment.id }}</td>
+                                    <td> {{details.course_name}}</td>
                                     
-                                    {% if assignment.course_id.course_name == none %}
-                                        <td>{{ assignment.id }}</td>
-                                        <td> {{details.course_name}}</td>
-                                        <td>No assignment</td>
+                                    
+                                    
+                                    <td>{{assignment.question}}</td>
+                                    
+                                    {% if assignment.id == None %}
+
+                                    <p>yes</p>
+
                                     {% endif %}
+                                
+                                  
+                                {% endif%}
+                                
+                               {% endfor %}
+                               {% if details.course_class == ' ' %}
+                                <td>{{details.id}}</td>
+                               <td>{{slug}}</td>
+                               <td>No Assignments</td>
+                            {% endif %}
+                                
+
+                                    
+                                        
+                                    
+
 
                                    
                                         <!-- <td>{{ dept.phone }}</td>
@@ -89,7 +106,7 @@
                                         <td>{{ dept.dept_capacity }}</td> -->
                                         
                                     </tr>
-                                    {% endfor %}
+                                    
                                     {% endif %}
                                    
                                     

@@ -1,3 +1,24 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action='/doLogin/' method="post">
+        {% csrf_token %}
+        <input type='email' class="form-control" placeholder='Email' name=email>
+        <input type='password' class="form-control" placeholder="Password" name=password>
+        <button type='submit'>Sign In</button>
+    </form>
+</body>
+
+</html> -->
+
 {% load static from staticfiles %}
 
 <!DOCTYPE html>
@@ -27,19 +48,20 @@
 	<div class="limiter">
 		<div class="container-login100 page-background">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form action='/doLogin/' method="post" class="login100-form validate-form">
+					{% csrf_token %}
 					<span class="login100-form-logo">
 						<img alt="" src="{% static '/img/logo-2.png' %}">
 					</span>
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in
 					</span>
-					<div class="wrap-input100 validate-input" data-validate="Enter Name">
-						<input class="input100" type="text" name="Name" placeholder="Name">
+					<div class="wrap-input100 validate-input" data-validate="Enter Email">
+						<input class="input100" type="email" placeholder='Email' name=email>
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					<div class="contact100-form-checkbox">
@@ -49,28 +71,25 @@
 						</label>
 					</div>
 					<div class="container-login100-form-btn">
-                        
-<!--                         
-                            <a href="{% url 'courses:courses_list' %}">
-                                    <button class="login100-form-btn">
-                                            Login
-                                        </button>
-                            </a> -->
-                    
+
+
+
 					</div>
 					<!-- <div class="text-center p-t-30">
 						<a class="txt1" href="forgot_password.html">
 							Forgot Password?
 						</a>
-					</div> -->
-                </form>
-                
-                <a href="{% url 'courses:courses_list' %}">
-                        <button class="login100-form-btn">
-                                Login
-                            </button>
-                </a>
-        
+                    </div> -->
+
+					<button type='submit' class="login100-form-btn">
+						Login
+					</button>
+				</form>
+
+
+
+				</a>
+
 			</div>
 		</div>
 	</div>

@@ -11,7 +11,9 @@ from announcements.models import Annoucement
 from assignments.models import Assignment 
 from courses.models import Course
 from django.db.models  import Count
-from submissions.models import Submission 
+from submissions.models import Submission
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 # ,Subject
 # from subjects.models import Subject
 
@@ -20,13 +22,46 @@ from submissions.models import Submission
 def admin_home(request):
     return render(request, 'base_layout.html')
 
+
 def student_home(request):
     courses =  Course.objects.all()
     submissions = Submission.objects.all()
+    class_id = request.user.student.student_id
+    # class_name = 
     assignments = Assignment.objects.all()
+    announcements = Annoucement.objects.all()
+    item = len(announcements)
 
 
-    return render(request, 'student_layout.html', {'courses': courses, 'submissions': submissions, 'assignments': assignments})
+    mention = Course.objects.all()
+
+    if('JSS1' == request.user.student.student_id):
+        class_name = 'JSS1'
+    elif('JSS2' == request.user.student.student_id):
+        class_name = 'JSS2'
+    elif('JSS3' == request.user.student.student_id):
+        class_name = 'JSS3'
+    elif('SS1' == request.user.student.student_id):
+        class_name = 'SSS1'
+    elif('SSS2' == request.user.student.student_id):
+        class_name = 'SSS2'
+    else:
+        class_name = 'SSS3'
+
+
+    print(class_name)
+    context = {
+        'courses': courses, 
+        'submissions': submissions,
+        'assignments': assignments,
+        'announcements': announcements,
+        'item': item,
+        'class_name': class_name,
+    }
+
+
+
+    return render(request, 'students/students_home.html', context)
     
 
 def add_teacher(request):
@@ -101,13 +136,14 @@ def show_assignments(request,slug):
     assignments = Assignment.objects.all()
     courses =  Course.objects.all()
     coursedetails = Course.objects.filter(course_name=slug)
-
-    print(Assignment.objects.all())
+    slug = slug 
+    # print(assignments)
 
     context = {
         'assignments': assignments,
         'courses':courses,
         'coursedetails': coursedetails,
+        'slug': slug
     }
 
   
@@ -118,7 +154,7 @@ def show_submissions(request, slug):
     courses =  Course.objects.all()
     submissions = Submission.objects.all()
     coursedetails = Course.objects.filter(course_name=slug)
-    print(coursedetails)
+    # print(coursedetails)
 
     context = {
         'assignments': assignments,
@@ -129,5 +165,14 @@ def show_submissions(request, slug):
     }
 
     return render(request, 'students/submissions_list.html', context)
+
+# def assignment_upload(request):
+#     if request.method == 'POST' and request.FILES['myfiles']:
+#         myfile = request.FILES['myfiles']
+#         fs = FileSystemStorage()
+#         filename = fs.save(myfile.name, myfile)
+#         uploaded_file_url = fs.url(filename)
+#         return render(request, 'students/upload_file.html', {'uploaded_file_url': uploaded_file_url})
+#     return render(request, 'students/upload_file.html')
 
 

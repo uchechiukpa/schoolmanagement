@@ -56,6 +56,7 @@
                                         <th>Course</th>
                                         <th>Question</th>
                                         <th>DeadLine of submission</th>
+                                        <th>submit</th>
                                         <!-- <th>Phone</th>
                                         <th>Email</th>
                                         <th>Starting Year</th>
@@ -77,38 +78,32 @@
                                         {% if details.course_name == assignment.course_id.course_name %}
                                         <td>{{ assignment.id }}</td>
                                         <td>{{ details.course_name}}</td>
-                                       
-                                        
-                                        
+                                    
                                         <td>{{ assignment.question}}</td>
-                                        
-                                        
-                                        
-                                        
+                                
 
                                         {% for submission in submissions %}
                                         {% if details.course_name == submission.subjectcourse.course_name %}
-                                        <td> {{submission.date_submitted}}</td>
+                                        
+                                        <td>{{submission.date_submitted}}</td>
                                         
                                         {% endif %}
                                         {% endfor %}
-                                        {% endif %}
-                                        {% endfor %}
-                                       
-                                        <!-- <td>{{ dept.phone }}</td>
-                                        <td>{{ dept.email }}</td>
-                                        <td>{{ dept.start_date }}</td>
-                                        <td>{{ dept.dept_capacity }}</td> -->
 
+                                        
+                                        <td><a href="#">submit</a></td>
+
+                                        
+                                        
+                                        {% endif %}
                                     </tr>
                                    
-                                 
-                                    {%  endif %}
                                     
+                                    {% endfor %}
+                                    {%  endif %}
                                     {% endfor %}
                                     
                                    
-
 
                                 </tbody>
                             </table>

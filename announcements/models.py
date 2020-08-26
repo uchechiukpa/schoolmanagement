@@ -6,7 +6,7 @@ class Annoucement(models.Model):
     annoucement_description = models.CharField(max_length=45)
 
     def __str__(self):
-        return self.annoucements_title 
+        return self.annoucement_title 
 
     def get_absolute_url(self):
          return reverse('announcements:annoucements_list')

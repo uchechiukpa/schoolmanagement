@@ -1,4 +1,55 @@
 {% extends 'student_layout.html' %}
 {% load static from staticfiles %}
 {% block content %}
+
+    <div class='d-flex justify-content-end mr-5'>
+        {% if class_name == request.user.student.student_id %}
+        <div class="row w-75 d-flex justify-content-end mt-5 ">
+           
+            
+            <div class="col-sm-6">
+                <div class="card card-style">
+                    <div class="card-body bg-secondary text-white text-center">
+                    
+                    
+                        <h1 class="card-title">{{ class_name | length }} </h1>
+                        <h3>Assignment(s)</h3>
+                    
+                    
+                   
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card card-style">
+                    <div class="card-body bg-secondary text-white text-center">
+
+                        <h1 class="card-title">{{ class_name| length }} </h1>
+                        <h3>submission(s)</h3>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center card-center ">
+                <div class="card card-style d-flex justify-content-center ">
+                    <div class="card-body bg-secondary text-white text-center">
+                        <div>
+                            <h1 class="card-title text-center">{{ announcements| length }}</h1>
+                        </div>
+                        <div>
+                            <h3>announcement(s)</h3>
+                        </div>
+                        
+                
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+        {% endif %}
+    </div>
+
+
+
 {% endblock content %}
