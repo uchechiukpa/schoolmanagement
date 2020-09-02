@@ -1,0 +1,94 @@
+{% extends 'teacher_layout.html' %}
+{% load static from staticfiles %}
+{% block content %}
+
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Assignments List</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a class="parent-item" href="#">Assignments</a>&nbsp;<i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Assignments List</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-xl-12">
+                <div class="card-box">
+                    <div class="card-head">
+                        <header>Assignments List</header>
+                        <button id="sdntmenu" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+                            data-upgraded=",MaterialButton">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="sdntmenu">
+                            <li class="mdl-menu__item"><i class="fa fa-print"></i>Print</li>
+                            <li class="mdl-menu__item">
+                                <i class="fa fa-file-pdf-o"></i>Save as PDF
+                            </li>
+                            <li class="mdl-menu__item">
+                                <i class="fa fa-file-excel-o"></i>Export to Excel
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body ">
+                   
+                        <div class="table-scrollable">
+                            <table class="table table-striped table-bordered table-hover table-checkable order-column valign-middle"
+                                id="example4">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Assignments class</th>
+                                        <th>Assignments question</th>
+                                        
+                                        <!-- <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Starting Year</th>
+                                        <th>Student capacity</th> -->
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for assignment in assignments %}
+                                    <tr class="odd">
+                                        <td>{{ assignment.id }}</td>
+                                        <td> {{assignment.course_id.course_class}}</td>
+                                        <td>{{assignment.question}}</td>
+                                        
+                                        <!-- <td>{{ dept.phone }}</td>
+                                        <td>{{ dept.email }}</td>
+                                        <td>{{ dept.start_date }}</td>
+                                        <td>{{ dept.dept_capacity }}</td> -->
+                                        <td>
+                                            <a href="{% url 'assignments:update_assignments' assignment.id %}" class=""
+                                                data-toggle="tooltip" title="Edit">
+                                                <i class="fa fa-check"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    {% endfor %}
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end page content -->
+
+{% endblock content %}

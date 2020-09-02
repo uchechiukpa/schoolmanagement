@@ -1,4 +1,4 @@
-{% extends 'base_layout.html' %}
+{% extends 'teacher_layout.html' %}
 {% load static from staticfiles %}
 {% block content %}
 
@@ -54,35 +54,41 @@
                                 id="example4">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>student firstname</th>
-                                        <th>student lastname</th>
-                                         <th>student username</th>
+                                        <th></th>
+                                        <th>student FirstName</th>
+                                        <th>student LastName</th>
+                                         <!-- <th>student username</th>
                                         <th>student email</th>
-                                        <th>student class</th>
+                                        <th>student class</th> -->
                                         <!-- <th>Student capacity</th> 
                                         <th>Edit</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
                                     {% for student in students %}
+                                    {% if student.student_id == request.user.teacher.teacher_class %}
                                     <tr class="odd">
+                                        
                                         <td>{{ student.id }}</td>
                                         <td> {{student.admin.first_name}}</td>
                                         <td>{{student.admin.last_name}}</td>
-                                        <td>{{student.admin.username}}</td>
+                                        <!-- <td>{{student.admin.username}}</td>
                                         <td>{{student.admin.email}}</td>
-                                        <td>{{student.student_id}}</td>
+                                        <td>{{student.student_id}}</td> -->
                                         <!-- <td>{{ dept.phone }}</td>
                                         <td>{{ dept.email }}</td>
                                         <td>{{ dept.start_date }}</td>
                                         <td>{{ dept.dept_capacity }}</td> -->
                                         <td>
-
+                                        
                                         </td>
+                                        
                                     </tr>
-
+                                    {% endif %}
                                     {% endfor %}
+                                    
+                                    
 
 
                                 </tbody>

@@ -55,6 +55,7 @@
                                         <th>id</th>
                                         <th>Course</th>
                                         <th>Assignments</th>
+                                        <th>Assignments file </th>
                                         <!-- <th>Phone</th>
                                         <th>Email</th>
                                         <th>Starting Year</th>
@@ -76,7 +77,7 @@
                                     
                                     
                                     <td>{{assignment.question}}</td>
-                                    
+                                    <td><a href="{{assignment.upload_question.url}}">Download</a></td>
                                     {% if assignment.id == None %}
 
                                     <p>yes</p>

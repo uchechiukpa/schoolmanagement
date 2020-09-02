@@ -71,37 +71,52 @@
                                     
                                     {% if details.course_class == request.user.student.student_id  %}
                                     {% for assignment in assignments %}
+                                   
                                     
+                                    {% if details.course_name == assignment.course_id.course_name %}
                                     
-                                    
-                                    <tr class="odd">
-                                        {% if details.course_name == assignment.course_id.course_name %}
+                                    <tr class="odd"> 
+                                        
                                         <td>{{ assignment.id }}</td>
                                         <td>{{ details.course_name}}</td>
                                     
                                         <td>{{ assignment.question}}</td>
-                                
+                                       
+                                            <!-- <div>{{submission.assignment_id}}</div>
 
-                                        {% for submission in submissions %}
-                                        {% if details.course_name == submission.subjectcourse.course_name %}
+
+
+                                            <div>{{assignment.question}}</div> -->
+                                        <!-- <h1>hi</h1> -->
                                         
                                         <td>{{submission.date_submitted}}</td>
                                         
+                                        {% if not assignment.question == submission.assignment_id %}
+                                        <!-- <h1>hey</h1> -->
+                                        {% endif %}
+                                        
+                                        {% for student in students %}
+                                        {% if student.admin.first_name == request.user.student.admin.first_name %}
+                                        {{userstudent}}
+                                        <td><a href="{% url 'upload' slug=request.user.student.admin.first_name %}">submit</a></td>
                                         {% endif %}
                                         {% endfor %}
+                                   
 
-                                        
-                                        <td><a href="#">submit</a></td>
-
+                                         
                                         
                                         
-                                        {% endif %}
+                                       
                                     </tr>
                                    
                                     
+                                   
+                                    {% endif %}
                                     {% endfor %}
-                                    {%  endif %}
+                                   
+                                    {% endif  %}
                                     {% endfor %}
+                                    
                                     
                                    
 

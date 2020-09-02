@@ -15,46 +15,24 @@ class AdminHOD(models.Model):
 
 class Teacher(models.Model):
     admin=models.OneToOneField(CustomUser,on_delete=models.CASCADE)
+    teacher_class=models.CharField(max_length=255, default='JSS1')
+    address=models.TextField(default='5th Adejumo street')
+    gender=models.CharField(max_length=255, default='Female')
+    subject=models.CharField(max_length=255, default='Maths')
+    bio=models.TextField(default='i love to study and read', null = True, blank = True)
 
 
-
-# class Subject(models.Model):
-
-    # subject_name=models.CharField(max_length=255)
-    # school_class = model.ChoiceField(choices=YEAR_IN_SCHOOL_CHOICES)
-
-
-    # def __str__(self):
-    #     return self.subject_name
-
-# class Class(models.Model):
-#     PRIMARYONE = 'PR 1'
-#     PRIMARYTWO = 'PR 2'
-#     PRIMARYTHREE = 'PR 3'
-#     PRIMARYFOUR = 'PR 4'
-#     PRIMARYFIVE = 'PR 5'
-#     PRIMARYSIX = 'PR 6'
-#     YEAR_IN_SCHOOL_CHOICES = [
-#         (PRIMARYONE, 'PRIMARY 1'),
-#         (PRIMARYTWO, 'PRIMARY 2'),
-#         (PRIMARYTHREE, 'PRIMARY 3'),
-#         (PRIMARYFOUR, 'PRIMARY 4'),
-#         (PRIMARYFIVE, 'PRIMARY 5'),
-#         (PRIMARYSIX, 'PRIMARY 6'),
-#     ]
-#     student_class = models.CharField(max_length=10, choices=YEAR_IN_SCHOOL_CHOICES, default=PRIMARYONE)
-#     subjectforclass = models.ForiegnKey(Subjectmax_length=30, on_delete=DO_NOTHING)
-
-    # class Meta:
-    #     verbose_name_plural='classes'
-
-    # def __str__(self):
-    #     return self.student_class 
+    def __str__(self):
+        return self.admin.username
 
 
 class Student(models.Model):
     admin=models.OneToOneField(CustomUser,on_delete=models.CASCADE)
     student_id=models.CharField(max_length=255)
+    address= models.TextField(default='5th Adejumo street')
+    gender = models.CharField(max_length=255, default='Female')
+    bio = models.TextField(default='i love to study and read')
+    
   
     def __str__(self):
         return self.admin.username
@@ -67,9 +45,9 @@ def create_user_profile(sender,instance,created,**kwargs):
         if instance.user_type==1:
             AdminHOD.objects.create(admin=instance)
         if instance.user_type==2:
-            Teacher.objects.create(admin=instance)
+            Teacher.objects.create(admin=instance, teacher_class="", address="", gender="", subject="", bio="")
         if instance.user_type==3:
-             Student.objects.create(admin=instance, student_id="")
+            Student.objects.create(admin=instance, student_id="", address="", gender="", bio="")
 
 
 @receiver(post_save,sender=CustomUser)
@@ -81,5 +59,5 @@ def save_user_profile(sender,instance,**kwargs):
     if instance.user_type==3:
         instance.student.save()
 
-            # print(student_name)
+
 

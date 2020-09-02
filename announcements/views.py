@@ -11,6 +11,8 @@ def annoucements_list(request):
     announces = Annoucement.objects.all().order_by('id')
     return render(request,'announcements/annoucements_list.html', {'announces': announces})
 
+
+
 class AnnoucementCreateView(CreateView):
     model = Annoucement
     fields = ['annoucement_title', 'annoucement_description']  
