@@ -21,9 +21,9 @@ def doLogin(request):
         user=EmailBackEnd.authenticate(request,username=request.POST.get("email"),password=request.POST.get("password"))
         if user!=None:
             login(request,user)
-            print(user.user_type)
+            # print(user.user_type)
             if user.user_type=="1":
-                print(user.user_type)
+                # print(user.user_type)
                 return HttpResponseRedirect('/admin_home')
             elif user.user_type=="2":
                 return HttpResponseRedirect(reverse("teacher_home"))
@@ -40,7 +40,7 @@ def doLogin(request):
 def GetUserDetails(request):
     
     if request.user!=None:
-        # return HttpResponse("User : "+request.user.email+" usertype : "+str(request.user.user_type) + request.user.username + request.user.first_name + request.user.student.student_id)
+
         context = {
             'request.user.email': request.user.email,
             'request.user.username': request.user.username,

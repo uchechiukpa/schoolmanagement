@@ -98,8 +98,6 @@ def studentsgradeList(request):
     gradedstudents=[]
     for studentgrade in studentgrades:
         for student in students:
-            # print(studentgrade.student_name)
-            # print(student.admin.first_name + " " + student.admin.last_name)
 
             if studentgrade.student_name == student.admin.first_name + " " + student.admin.last_name:
                 gradedstudents.append(studentgrade)
@@ -191,21 +189,8 @@ def show_submissions(request, slug):
     for student in students:
         student.admin.first_name
 
-    # submissionlists = []
-    # for assignment in assignments:
-        # print(assignment.question)
         for submission in submissions:
-            # print(submission.date_submitted)
-    #         if assignment.question == submission.assignment_id:
-    #             print(submission.date_submitted)
-    #         else:
-    #             print('ji')
-    # # for assignment in assignments:
-    # #     print(assignment.question)
-    
-            # print(submission)
-    # print('ki') /    
-        # print(submission)
+
             context = {
                 'assignments': assignments,
                 "courses": courses,
@@ -219,44 +204,9 @@ def show_submissions(request, slug):
                 'submission':submission 
                 
             }
-            print(submission)
-        # print(submissionlist)
-    # print(students.admin.first_name)
+
+
     return render(request, 'students/submissions_list.html', context)
-
-# def submit_assignment(request):
-#     courses =  Course.objects.all()
-#     submissions = Submission.objects.all()
-#     class_id = request.user.student.student_id
-#     assignments = Assignment.objects.all()
-
-
-#     if('JSS1' == request.user.student.student_id):
-#         class_name = 'JSS1'
-#     elif('JSS2' == request.user.student.student_id):
-#         class_name = 'JSS2'
-#     elif('JSS3' == request.user.student.student_id):
-#         class_name = 'JSS3'
-#     elif('SS1' == request.user.student.student_id):
-#         class_name = 'SSS1'
-#     elif('SSS2' == request.user.student.student_id):
-#         class_name = 'SSS2'
-#     else:
-#         class_name = 'SSS3'
-
-
-#     # print(class_name)
-#     context = {
-#         'courses': courses, 
-#         'submissions': submissions,
-#         'assignments': assignments,
-#         'class_name': class_name,
-#         'class_id': class_id
-#     }
-
-   
-
-#     return render(request, 'students/upload_file.html', context)
 
 def upload_assignment(request, slug):
     assignments = Assignment.objects.all()

@@ -83,8 +83,6 @@ def studentgradeList(request):
     gradedstudents=[]
     for studentgrade in studentgrades:
         for student in students:
-            # print(studentgrade.student_name)
-            # print(student.admin.first_name + " " + student.admin.last_name)
 
             if studentgrade.student_name == student.admin.first_name + " " + student.admin.last_name:
                 gradedstudents.append(studentgrade)
